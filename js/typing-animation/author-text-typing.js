@@ -1,5 +1,5 @@
 var i = 0;
-var authorInfo = 'Created by Aleshchyk Artur';
+var authorInfo = 'Created by Aleshchyk Artur as diploma project.';
 
 
 letsTipe = setTimeout(function typingSlogan() {
