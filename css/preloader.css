@@ -8,7 +8,7 @@
   transition: 1s all;
   opacity: 1;
   visibility: visible;
-  background: url("../img/preloader/CubeOut.gif") #fafafa center no-repeat;
+  background: url("../img/preloader/CubeOut.gif") #2E2E2E center no-repeat;
 
 }
 
@@ -18,15 +18,15 @@
 }
 
 .preloader .loader {
-  width: 200px;
-  height: 200px;
-  line-height: 180px;
-  border: 5px solid #333333;
+  width: 100px;
+  height: 100px;
+  line-height: 90px;
+  border: 2px solid #938E88;
   border-radius: 50%;
   align-content: center;
-  background-color: #fafafa;
-  font-size: 50px;
-  color: #333333;
+  background-color: #36353D;
+  font-size: 25px;
+  color: #fafafa;
 }
 
 @keyframes spin {
