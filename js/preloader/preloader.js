@@ -1,11 +1,11 @@
-var images = document.images;
-var imagesTotalCount = images.length;
-var preloader = document.getElementById('page-preloader');
-var imagesLoadedCount = 0;
-var percDisplay = document.getElementById('load-perc');
+const images = document.images;
+const imagesTotalCount = images.length;
+const preloader = document.getElementById('page-preloader');
+let imagesLoadedCount = 0;
+const percDisplay = document.getElementById('load-perc');
 
-for (var i = 0; i < imagesTotalCount; i++) {
-  var imageClone = new Image();
+for (let i = 0; i < imagesTotalCount; i++) {
+  const imageClone = new Image();
   imageClone.onload = loadImages;
   imageClone.onerror = loadImages;
   imageClone.src = images[i].src;
