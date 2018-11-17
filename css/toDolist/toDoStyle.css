@@ -6,8 +6,16 @@ ul {
     color: red;
 }
 
-#list li{
+#list li {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    color: #fff;
+    padding-left: 5px;
+}
+
+.active {
+
 }
