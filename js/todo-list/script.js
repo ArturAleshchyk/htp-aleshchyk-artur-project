@@ -1,6 +1,6 @@
 var list = document.querySelector('ul');
 list.addEventListener('click', function (ev) {
-  if (ev.target.tagName === "SPAN") {
+  if (ev.target.tagName === "LI") {
     ev.target.classList.toggle('text-danger');
   } else if (ev.target.tagName === "BUTTON") {
     var div = ev.target.parentNode;
