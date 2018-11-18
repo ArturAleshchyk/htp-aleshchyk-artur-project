@@ -18,7 +18,7 @@ function newElement() {
   li.appendChild(t);
 
   if (inputValue == "") {
-    alert("Введите ваше дело!");
+    alert("Please fill task form.");
   } else {
     document.getElementById('list').appendChild(li);
   }

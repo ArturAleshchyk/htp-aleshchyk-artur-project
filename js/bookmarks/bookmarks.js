@@ -69,9 +69,11 @@ function fetchBookmarks() {
     let url = bookmarks[i].url;
 
     bookmarksResults.innerHTML += `<div class="text-capitalize">
-                                     <h3>${name}
-                                       <a class="btn btn-light" target="_blank" href="http://${url}">Visit</a>
-                                       <a class="btn btn-danger" onclick="deleteBookmark('${url}')" href="#">Delete</a>
+                                     <h3 style="display: flex; justify-content: space-between;">${name}
+                                       <div>
+                                         <a class="btn btn-light" target="_blank" href="http://${url}">Visit</a>
+                                         <a class="btn btn-danger" onclick="deleteBookmark('${url}')" href="#">Delete</a>
+                                       </div>
                                      </h3>
                                    </div>`;
   }
