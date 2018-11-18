@@ -28,6 +28,9 @@ function saveBookmark(eo) {
 
   //Prevent form from submitting
   eo.preventDefault();
+
+  //Refetch bookmarks
+  fetchBookmarks()
 }
 
 //delete bookmark
@@ -43,6 +46,9 @@ function deleteBookmark(url) {
   }
   //Rewrite local storage
   localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+
+  //Refetch bookmarks
+  fetchBookmarks()
 }
 
 function fetchBookmarks() {
