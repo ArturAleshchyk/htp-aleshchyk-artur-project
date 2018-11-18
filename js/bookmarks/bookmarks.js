@@ -29,3 +29,17 @@ function saveBookmark(eo) {
   //Prevent form from submitting
   eo.preventDefault();
 }
+
+function fetchBookmarks() {
+  //get bookmarks from local storage
+  const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  //get bookmarks results
+  const bookmarksResults = document.getElementById('bookmarksResults');
+  //add items to html
+  bookmarksResults.innerHTML = '';
+
+  for (let i = 0; i < bookmarks.length; i++) {
+    let name = bookmarks[i].name;
+    let url = bookmarks[i].url;
+  }
+}
