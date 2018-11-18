@@ -4,6 +4,11 @@ function saveBookmark(eo) {
   //Get form values
   const siteName = document.getElementById('siteName').value;
   const siteUrl = document.getElementById('siteUrl').value;
+  
+  if (!siteName || !siteUrl) {
+    alert('Fill the form');
+    return false;
+  }
 
   const bookmark = {
     name: siteName,
