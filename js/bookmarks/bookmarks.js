@@ -41,5 +41,11 @@ function fetchBookmarks() {
   for (let i = 0; i < bookmarks.length; i++) {
     let name = bookmarks[i].name;
     let url = bookmarks[i].url;
+
+    bookmarksResults.innerHTML += `<div class="text-capitalize">
+                                     <h3>${name}
+                                       <a class="btn btn-light" target="_blank" href="http://${url}">Visit</a>
+                                     </h3>
+                                   </div>`;
   }
 }
