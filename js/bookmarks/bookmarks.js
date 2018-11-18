@@ -30,6 +30,11 @@ function saveBookmark(eo) {
   eo.preventDefault();
 }
 
+//delete bookmark
+function deleteBookmark(url) {
+  console.log(url);
+}
+
 function fetchBookmarks() {
   //get bookmarks from local storage
   const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
@@ -45,6 +50,7 @@ function fetchBookmarks() {
     bookmarksResults.innerHTML += `<div class="text-capitalize">
                                      <h3>${name}
                                        <a class="btn btn-light" target="_blank" href="http://${url}">Visit</a>
+                                       <a class="btn btn-danger" onclick="deleteBookmark('${url}')" href="#">Delete</a>
                                      </h3>
                                    </div>`;
   }
