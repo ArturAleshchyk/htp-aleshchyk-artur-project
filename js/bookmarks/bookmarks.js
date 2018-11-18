@@ -32,7 +32,17 @@ function saveBookmark(eo) {
 
 //delete bookmark
 function deleteBookmark(url) {
-  console.log(url);
+  //get bookmarks from local storage
+  const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+  for (let i = 0; i < bookmarks.length; i++) {
+    if (bookmarks[i].url == url) {
+      //remove from array
+      bookmarks.splice(i, 1);
+    }
+  }
+  //Rewrite local storage
+  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 }
 
 function fetchBookmarks() {
