@@ -4,7 +4,7 @@ function saveBookmark(eo) {
   //Get form values
   const siteName = document.getElementById('siteName').value;
   const siteUrl = document.getElementById('siteUrl').value;
-  
+
   if (!siteName || !siteUrl) {
     alert('Fill the form');
     return false;
@@ -44,7 +44,7 @@ function deleteBookmark(url) {
   const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
 
   for (let i = 0; i < bookmarks.length; i++) {
-    if (bookmarks[i].url == url) {
+    if (bookmarks[i].url === url) {
       //remove from array
       bookmarks.splice(i, 1);
     }
@@ -69,12 +69,12 @@ function fetchBookmarks() {
     let url = bookmarks[i].url;
 
     bookmarksResults.innerHTML += `<div class="text-capitalize">
-                                     <h3 style="display: flex; justify-content: space-between;">${name}
+                                     <h5 style="display: flex; justify-content: space-between; align-items: center">${name}
                                        <div>
                                          <a class="btn btn-light" target="_blank" href="http://${url}">Visit</a>
                                          <a class="btn btn-danger" onclick="deleteBookmark('${url}')" href="#">Delete</a>
                                        </div>
-                                     </h3>
+                                     </h5>
                                    </div>`;
   }
 }
