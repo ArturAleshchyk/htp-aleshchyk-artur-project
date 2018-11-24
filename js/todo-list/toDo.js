@@ -1,28 +1,28 @@
-var addButton = document.getElementById('add-task');
-var inputTask = document.getElementById('new-task');
+const addButton = document.getElementById('add-task');
+const inputTask = document.getElementById('new-task');
 
-var unfinishedTasks = document.getElementById('unfinished-tasks');
-var finishedTasks = document.getElementById('finished-tasks');
+let unfinishedTasks = document.getElementById('unfinished-tasks');
+let finishedTasks = document.getElementById('finished-tasks');
 
 function createNewElement(task) {
-  var listItem = document.createElement('li');
+  let listItem = document.createElement('li');
   listItem.className = 'mb-2';
 
-  var inputGroup = document.createElement('div');
+  let inputGroup = document.createElement('div');
   inputGroup.className = 'input-group';
 
-  var inputGroupPrep = document.createElement('div');
+  let inputGroupPrep = document.createElement('div');
   inputGroupPrep.className = 'input-group-prepend';
-  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar" type="button">Done</button>'
+  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar" type="button">Done</button>';
 
-  var label = document.createElement('label');
+  let label = document.createElement('label');
   label.className = 'form-control';
   label.innerHTML = task;
 
-  var inputGroupAppend = document.createElement('div');
+  let inputGroupAppend = document.createElement('div');
   inputGroupAppend.className = 'input-group-append';
   inputGroupAppend.innerHTML = '<button class="btn btn-info" type="button">Edit</button>\n' +
-                               '<button class="btn btn-danger" type="button">Delete</button>'
+                               '<button class="btn btn-danger" type="button">Delete</button>';
 
   inputGroup.appendChild(inputGroupPrep);
   inputGroup.appendChild(label);
@@ -31,6 +31,14 @@ function createNewElement(task) {
   listItem.appendChild(inputGroup);
 
   return listItem
-};
+}
 
-console.log(createNewElement(123));
+function addTask() {
+  if (inputTask.value) {
+    const listItem = createNewElement(inputTask.value);
+    unfinishedTasks.appendChild(listItem);
+    inputTask.value = '';
+  }
+}
+
+addButton.onclick = addTask;
