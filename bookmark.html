@@ -1,75 +1,75 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>StudyHelper</title>
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="css/preloader/preloader.css">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-  <link href="css/bootstrap/cover.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/custom-styles/style.css">
-</head>
-<body class="text-center" onload="fetchBookmarks()">
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="masthead mb-auto">
-    <div class="inner">
-      <h3 class="masthead-brand">StudyHelper</h3>
-      <nav class="nav nav-masthead justify-content-center">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="#">Pomodoro timer</a>
-        <a class="nav-link" href="toDoList.html">ToDo list</a>
-        <a class="nav-link  active" href="#">Bookmark's</a>
-      </nav>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StudyHelper</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/preloader/preloader.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link href="css/bootstrap/cover.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom-styles/style.css">
+  </head>
+  <body class="text-center" onload="fetchBookmarks()">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand">StudyHelper</h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="#">Pomodoro timer</a>
+            <a class="nav-link" href="toDoList.html">ToDo list</a>
+            <a class="nav-link  active" href="#">Bookmark's</a>
+          </nav>
+        </div>
+      </header>
+      <main role="main" class="inner cover">
+        <hr style="background-color: #555;">
+
+        <!--Bookmarks-->
+        <h4>Bookmark Your favorite website's</h4>
+        <form id="myForm">
+
+          <!--Website name-->
+          <div class="form-group">
+            <label class="float-left clearfix">Website name</label>
+            <input type="text" class="form-control" id="siteName" placeholder="Name ...">
+          </div>
+          <!--end-->
+
+          <!--Website Url-->
+          <div class="form-group mt-2">
+            <label class="float-left clearfix">Website URL</label>
+            <input type="text" class="form-control" id="siteUrl" placeholder="URL ...">
+          </div>
+          <!--end-->
+
+          <button type="submit" class="btn btn-primary mb-3">Create bookmark</button>
+        </form>
+        <!--Bookmarks list-->
+        <div class="row">
+          <div class="col-lg-12">
+            <div id="bookmarksResults"></div>
+          </div>
+        </div>
+        <!--end-->
+        <!--Bookmarks end-->
+        <hr style="background-color: #555;">
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p id="author-info"></p>
+        </div>
+      </footer>
     </div>
-  </header>
-  <main role="main" class="inner cover">
-    <hr style="background-color: #555;">
-
-    <!--Bookmarks-->
-    <h4>Bookmark Your favorite website's</h4>
-    <form id="myForm">
-
-      <!--Website name-->
-      <div class="form-group">
-        <label class="float-left clearfix">Website name</label>
-        <input type="text" class="form-control" id="siteName" placeholder="Name ...">
-      </div>
-      <!--end-->
-
-      <!--Website Url-->
-      <div class="form-group mt-2">
-        <label class="float-left clearfix">Website URL</label>
-        <input type="text" class="form-control" id="siteUrl" placeholder="URL ...">
-      </div>
-      <!--end-->
-
-      <button type="submit" class="btn btn-primary mb-3" onclick=" clickSound()">Create bookmark</button>
-    </form>
-    <!--Bookmarks list-->
-    <div class="row">
-      <div class="col-lg-12">
-        <div id="bookmarksResults"></div>
-      </div>
-    </div>
-    <!--end-->
-    <!--Bookmarks end-->
-    <hr style="background-color: #555;">
-  </main>
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
-      <p id="author-info"></p>
-    </div>
-  </footer>
-</div>
-<script src="js/jquery/jquery-3.3.1.slim.min.js"></script>
-<script src="js/bootstrap/popper.min.js"></script>
-<script src="js/bootstrap/bootstrap.min.js"></script>
-<script src="js/preloader/preloader.js"></script>
-<script src="js/typing-animation/author-text-typing.js"></script>
-<script src="js/audio-effects/mouseClickSound.js"></script>
-<script src="js/bookmarks/bookmarks.js"></script>
-</body>
+    <script src="js/jquery/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/preloader/preloader.js"></script>
+    <script src="js/typing-animation/author-text-typing.js"></script>
+    <script src="js/audio-effects/clickEffects.js"></script>
+    <script src="js/bookmarks/bookmarks.js"></script>
+  </body>
 </html>
