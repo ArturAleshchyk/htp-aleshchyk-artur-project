@@ -10,6 +10,15 @@ function saveBookmark(eo) {
     return false;
   }
 
+  //Regular expression for url links
+  let expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
+  let regex = new RegExp(expression);
+
+  if (!siteUrl.match(regex)){
+    alert('Please use a valid URL.');
+    return false;
+  }
+
   const bookmark = {
     name: siteName,
     url: siteUrl,
@@ -71,7 +80,7 @@ function fetchBookmarks() {
     bookmarksResults.innerHTML += `<div class="text-capitalize">
                                      <h5 style="display: flex; justify-content: space-between; align-items: center">${name}
                                        <div>
-                                         <a class="btn btn-light" target="_blank" href="http://${url}">Visit</a>
+                                         <a class="btn btn-light" target="_blank" href="${url}">Visit</a>
                                          <a class="btn btn-danger" onclick="deleteBookmark('${url}')" href="#">Delete</a>
                                        </div>
                                      </h5>
