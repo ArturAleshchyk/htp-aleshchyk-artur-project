@@ -28,21 +28,65 @@
       </header>
       <main role="main" class="inner cover">
         <h4>Save all your task's in one place.</h4>
-
         <form id="myForm">
-          <!--ToDoList-->
+          <!--input-->
           <div class="form-group">
             <label class="float-left clearfix text-white-50">Create task</label>
             <input type="text" class="form-control" id="siteName" placeholder="Some text...">
           </div>
-          <!--END-->
-
+          <!--submit-->
           <button id="add" class="btn btn-primary mb-3 w-25">Add</button>
+          <!--list-->
+          <h4 class="text-white-50">Task list</h4>
+          <ul class="pl-0">
+            <!--New task-->
+            <li class="mb-2">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                  </div>
+                </div>
+                <label class="form-control">123</label>
+                <div class="input-group-append" id="button-addon4">
+                  <button class="btn btn-info" type="button">Edit</button>
+                  <button class="btn btn-danger" type="button">Delete</button>
+                </div>
+              </div>
+            </li>
+            <!--Edit task-->
+            <li class="mb-2">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input">
+                  </div>
+                </div>
+                <input type="text" class="form-control" value="123">
+                <div class="input-group-append" id="button-addon4">
+                  <button class="btn btn-success" type="button">Save</button>
+                  <button class="btn btn-danger" type="button">Delete</button>
+                </div>
+              </div>
+            </li>
+            <!--Finished tasks-->
+            <h4 class="text-white-50">Finished tasks</h4>
+            <li class="mb-2">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" aria-label="Checkbox for following text input" checked>
+                  </div>
+                </div>
+                <label class="form-control text-white-50">123</label>
+                <div class="input-group-append" id="button-addon4">
+                  <button class="btn btn-success" type="button">Save</button>
+                  <button class="btn btn-danger" type="button">Delete</button>
+                </div>
+              </div>
+            </li>
+          </ul>
         </form>
-
-
-
-        <hr style="background-color: #555;">
       </main>
       <footer class="mastfoot mt-auto">
         <div class="inner">
