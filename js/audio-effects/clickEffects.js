@@ -12,11 +12,11 @@ $(document).on('click', '.btn-danger', () => {
 
 //Primary buttons
 $(document).on('click', '.btn-primary', () => {
-  let clickRemove = new Audio();
-  clickRemove.src = 'audio/clickPrimary.mp3';
+  let clickPrimary = new Audio();
+  clickPrimary.src = 'audio/clickPrimary.mp3';
 
   function clickSoundPrimary() {
-    clickRemove.play();
+    clickPrimary.play();
   }
 
   clickSoundPrimary();
@@ -24,11 +24,11 @@ $(document).on('click', '.btn-primary', () => {
 
 //Link buttons
 $(document).on('click', '.btn-light', () => {
-  let clickRemove = new Audio();
-  clickRemove.src = 'audio/clickLinks.mp3';
+  let clickLinks = new Audio();
+  clickLinks.src = 'audio/clickLinks.mp3';
 
   function clickSoundLinks() {
-    clickRemove.play();
+    clickLinks.play();
   }
 
   clickSoundLinks();
