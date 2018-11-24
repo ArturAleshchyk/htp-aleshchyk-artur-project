@@ -27,17 +27,20 @@
         </div>
       </header>
       <main role="main" class="inner cover">
-        <hr style="background-color: #555;">
-        <div class="todo-header">
-          <h4>ToDo list</h4>
-          <div class="input-group input-group-sm mb-3">
-            <input id="toDoEl" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            <div class="input-group-prepend">
-              <button class="btn-primary" onclick="newElement()">Add task</button>
-            </div>
+        <h4>Save all your task's in one place.</h4>
+        <form id="myForm">
+          <!--ToDoList-->
+          <div class="form-group">
+            <label class="float-left clearfix text-white-50">Create task</label>
+            <input type="text" class="form-control" id="siteName" placeholder="Some text...">
           </div>
-          <ul id="list"></ul>
-        </div>
+          <!--END-->
+
+          <button type="submit" class="btn btn-primary mb-3 w-25">Add</button>
+        </form>
+
+
+
         <hr style="background-color: #555;">
       </main>
       <footer class="mastfoot mt-auto">
