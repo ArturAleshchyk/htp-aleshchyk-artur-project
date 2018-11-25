@@ -10,13 +10,25 @@ var numOfCircles = 100;
 canvas.width = innerWidth;
 canvas.height = innerHeight;
 
+var colorArray = [
+  '#970090',
+  '#bbeb00',
+  '#1788dd',
+  '#440094',
+  '#fc6400',
+  '#fa110a',
+  '#69d499',
+  '#00c544',
+  '#fc008b',
+];
+
 //Function constr. for new circles
 function Circle(x, y, dx, dy, radius) {
   this.x = x;
   this.y = y;
   this.dx = dx;
   this.dy = dy;
-  this.color = "#fff";
+  this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
   this.radius = radius;
 
   //Update circles position function
@@ -51,10 +63,10 @@ for (var i = 0; i < numOfCircles; i++) {
   var x = Math.random() * (innerWidth - radius * 2) + radius;
   //Random Y position
   var y = Math.random() * (innerHeight - radius * 2) + radius;
-  //Random X velocity
-  var dx = Math.random() - 0.5;
-  //Random Y velocity
-  var dy = Math.random() - 0.5;
+  //Random X speed
+  var dx = (Math.random() - 0.5) *2;
+  //Random Y speed
+  var dy = (Math.random() - 0.5) *2;
   //Create new circle
   circleArray.push(new Circle(x, y, dx, dy, radius));
 }
