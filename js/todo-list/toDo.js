@@ -19,6 +19,11 @@ function createNewElement(task) {
   label.className = 'form-control';
   label.innerHTML = task;
 
+  var input = document.createElement('input');
+  input.setAttribute('type', 'text');
+  input.className = 'form-control';
+  input.style.display = 'none';
+
   var inputGroupAppend = document.createElement('div');
   inputGroupAppend.className = 'input-group-append';
   inputGroupAppend.innerHTML = '<button class="btn btn-info edit" type="button">Edit</button>\n' +
@@ -26,6 +31,7 @@ function createNewElement(task) {
 
   inputGroup.appendChild(inputGroupPrep);
   inputGroup.appendChild(label);
+  inputGroup.appendChild(input);
   inputGroup.appendChild(inputGroupAppend);
 
   listItem.appendChild(inputGroup);
@@ -56,7 +62,7 @@ function deleteTask() {
 }
 
 function editTask() {
-  console.log('e');
+
 }
 
 function finishTask() {
