@@ -47,7 +47,12 @@ function addTask(e) {
 addButton.onclick = addTask;
 
 function deleteTask() {
-  console.log('d');
+  var formGroup = this.parentNode;
+  var inputGroup = formGroup.parentNode;
+  var listItem = inputGroup.parentNode;
+  var ul = listItem.parentNode;
+
+  ul.removeChild(listItem);
 }
 
 function editTask() {
