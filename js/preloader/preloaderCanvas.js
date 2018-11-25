@@ -1,4 +1,4 @@
-var canvas = document.getElementById('canvas');
+var canvas = document.getElementById('canvas-preloader');
 var c = canvas.getContext('2d');
 
 var innerWidth = window.innerWidth;
