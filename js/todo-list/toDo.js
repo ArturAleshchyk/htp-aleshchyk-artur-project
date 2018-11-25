@@ -1,28 +1,28 @@
-const addButton = document.getElementById('add-task');
-const inputTask = document.getElementById('new-task');
+var addButton = document.getElementById('add-task');
+var inputTask = document.getElementById('new-task');
 
-let unfinishedTasks = document.getElementById('unfinished-tasks');
-let finishedTasks = document.getElementById('finished-tasks');
+var unfinishedTasks = document.getElementById('unfinished-tasks');
+var finishedTasks = document.getElementById('finished-tasks');
 
 function createNewElement(task) {
-  let listItem = document.createElement('li');
+  var listItem = document.createElement('li');
   listItem.className = 'mb-2';
 
-  let inputGroup = document.createElement('div');
+  var inputGroup = document.createElement('div');
   inputGroup.className = 'input-group';
 
-  let inputGroupPrep = document.createElement('div');
+  var inputGroupPrep = document.createElement('div');
   inputGroupPrep.className = 'input-group-prepend';
-  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar" type="button">Done</button>';
+  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">Done</button>';
 
-  let label = document.createElement('label');
+  var label = document.createElement('label');
   label.className = 'form-control';
   label.innerHTML = task;
 
-  let inputGroupAppend = document.createElement('div');
+  var inputGroupAppend = document.createElement('div');
   inputGroupAppend.className = 'input-group-append';
-  inputGroupAppend.innerHTML = '<button class="btn btn-info" type="button">Edit</button>\n' +
-                               '<button class="btn btn-danger" type="button">Delete</button>';
+  inputGroupAppend.innerHTML = '<button class="btn btn-info edit" type="button">Edit</button>\n' +
+                               '<button class="btn btn-danger delete" type="button">Delete</button>';
 
   inputGroup.appendChild(inputGroupPrep);
   inputGroup.appendChild(label);
@@ -37,10 +37,37 @@ function addTask(e) {
   e.preventDefault();
 
   if (inputTask.value) {
-    const listItem = createNewElement(inputTask.value);
+    var listItem = createNewElement(inputTask.value);
     unfinishedTasks.appendChild(listItem);
+    bindTaskEvents(listItem, finishTask);
     inputTask.value = '';
   }
 }
 
 addButton.onclick = addTask;
+
+function deleteTask() {
+  console.log('d');
+}
+
+function editTask() {
+  console.log('e');
+}
+
+function finishTask() {
+  console.log('f');
+}
+
+function unfinishTask() {
+
+}
+
+function bindTaskEvents(listItem, checkboxEvents) {
+  var checkbox = listItem.querySelector('button.checkbox');
+  var editButton = listItem.querySelector('button.edit');
+  var deleteButton = listItem.querySelector('button.delete');
+
+  checkbox.onclick = checkboxEvents;
+  editButton.onclick = editTask;
+  deleteButton.onclick = deleteTask;
+}
