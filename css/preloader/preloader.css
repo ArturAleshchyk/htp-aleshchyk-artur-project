@@ -8,8 +8,6 @@
   transition: 1s all;
   opacity: 1;
   visibility: visible;
-  background: url("../../img/preloader/CubeOut.gif") #2E2E2E center no-repeat;
-
 }
 
 .done {
@@ -21,19 +19,12 @@
   width: 100px;
   height: 100px;
   line-height: 90px;
-  border: 2px solid #938E88;
+  text-shadow: 2px 2px 2px #444;
+  box-shadow: 2px 2px 2px #444;
+  border: 3px solid #ffffff;
   border-radius: 50%;
   align-content: center;
-  background-color: #36353D;
-  font-size: 25px;
+  font-weight: bold;
+  font-size: 30px;
   color: #fafafa;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
