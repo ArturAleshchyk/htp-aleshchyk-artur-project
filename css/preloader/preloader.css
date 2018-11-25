@@ -8,7 +8,6 @@
   transition: 1s all;
   opacity: 1;
   visibility: visible;
-  background: url("../../img/preloader/CubeOut.gif") #2E2E2E center no-repeat; //Remove when canvas finished
 }
 
 .done {
@@ -26,13 +25,4 @@
   background-color: #36353D;
   font-size: 25px;
   color: #fafafa;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
