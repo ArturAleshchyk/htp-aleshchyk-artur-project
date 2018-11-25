@@ -19,26 +19,47 @@ function Circle(x, y, dx, dy, radius) {
   this.color = "#fff";
   this.radius = radius;
 
-  c.beginPath();
-  c.arc(this.x, this.y, this.radius, doublePi,false);
-  c.fillStyle = this.color;
-  c.fill();
-  c.closePath();
+  //Update circles statemant function
+  this.update = function () {
+    if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+      this.dx -= this.dx;
+    }
+    if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
+      this.dx -= this.dx;
+    }
+
+    this.x += this.dx;
+    this.y = this.dy;
+
+    this.draw();
+  };
+
+  //Draw circles function
+  this.draw = function() {
+    c.beginPath();
+    c.arc(this.x, this.y, this.radius, doublePi, false);
+    c.fillStyle = this.color;
+    c.fill();
+    c.closePath();
+  }
 }
 
 //Creating new circles
-var radius = (Math.random() *30) + 1;
-var x = Math.random() * (innerWidth - radius * 2) +radius;
-var y = Math.random() * (innerHeight - radius * 2) +radius;
-var dx = Math.random() - 0.5 ;
+var radius = (Math.random() * 30) + 1;
+var x = Math.random() * (innerWidth - radius * 2) + radius;
+var y = Math.random() * (innerHeight - radius * 2) + radius;
+var dx = Math.random() - 0.5;
 var dy = Math.random() - 0.5;
+var i = 0;
+
+circleArray.push(new Circle(x, y, dx, dy, radius));
 
 //Function to animate circles
 function animate() {
   requestAnimationFrame(animate);
-  c.clearRect(0,0, innerWidth, innerHeight)
+  c.clearRect(0, 0, innerWidth, innerHeight)
 
-  new Circle(x, y, dx, dy, radius);
+  circleArray[i].update();
 }
 
 animate();
