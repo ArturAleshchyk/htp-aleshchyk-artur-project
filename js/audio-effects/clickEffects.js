@@ -33,3 +33,15 @@ $(document).on('click', '.btn-light', () => {
 
   clickSoundLinks();
 });
+
+//Link success
+$(document).on('click', '.btn-success', () => {
+  let clickRemove = new Audio();
+  clickRemove.src = 'audio/clickSuccess.mp3';
+
+  function clickSoundSuccess() {
+    clickRemove.play();
+  }
+
+  clickSoundSuccess();
+});

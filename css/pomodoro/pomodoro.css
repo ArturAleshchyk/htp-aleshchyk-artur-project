@@ -1,0 +1,25 @@
+#timer {
+    border: 10px solid #ffffff;
+    border-radius: 50%;
+    margin-bottom: 80px;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#time {
+    cursor: default;
+    font-size: 60px;
+    z-index: 1;
+    position: relative;
+}
+
+#filler {
+    background: #e70041;
+    opacity: 0.5;
+    height: 0;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+}
