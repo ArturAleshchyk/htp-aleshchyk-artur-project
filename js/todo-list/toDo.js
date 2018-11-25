@@ -75,7 +75,7 @@ function editTask() {
     label.style.display = 'block';
     input.style.display = 'none';
     label.innerText = input.value;
-    editButton.className = 'btn btn-label';
+    editButton.className = 'btn btn-info';
     editButton.innerHTML = 'Edit';
   } else {
     input.style.display = 'block';
