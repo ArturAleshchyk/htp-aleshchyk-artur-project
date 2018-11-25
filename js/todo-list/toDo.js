@@ -62,7 +62,30 @@ function deleteTask() {
 }
 
 function editTask() {
+  var editButton = this;
+  var formGroup = this.parentNode;
+  var inputGroup = formGroup.parentNode;
+  var listItem = inputGroup.parentNode;
+  var label = listItem.querySelector('label');
+  var input = listItem.querySelector('input');
 
+  var containsClass = listItem.classList.contains('editMode');
+
+  if (containsClass) {
+    label.style.display = 'block';
+    input.style.display = 'none';
+    label.innerText = input.value;
+    editButton.className = 'btn btn-label';
+    editButton.innerHTML = 'Edit';
+  } else {
+    input.style.display = 'block';
+    label.style.display = 'none';
+    input.value = label.innerHTML;
+    editButton.className = 'btn btn-success';
+    editButton.innerHTML = 'Save';
+  }
+
+  listItem.classList.toggle('editMode');
 }
 
 function finishTask() {
