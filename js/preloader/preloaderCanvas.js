@@ -44,21 +44,29 @@ function Circle(x, y, dx, dy, radius) {
 }
 
 //Creating new circles
-var radius = (Math.random() * 30) + 1;
-var x = Math.random() * (innerWidth - radius * 2) + radius;
-var y = Math.random() * (innerHeight - radius * 2) + radius;
-var dx = Math.random() - 0.5;
-var dy = Math.random() - 0.5;
-var i = 0;
-
-circleArray.push(new Circle(x, y, dx, dy, radius));
+for (var i = 0; i < numOfCircles; i++) {
+  //Random circle size
+  var radius = (Math.random() * 30) + 1;
+  //Random x position
+  var x = Math.random() * (innerWidth - radius * 2) + radius;
+  //Random Y position
+  var y = Math.random() * (innerHeight - radius * 2) + radius;
+  //Random X velocity
+  var dx = Math.random() - 0.5;
+  //Random Y velocity
+  var dy = Math.random() - 0.5;
+  //Create new circle
+  circleArray.push(new Circle(x, y, dx, dy, radius));
+}
 
 //Function to animate circles
 function animate() {
   requestAnimationFrame(animate);
-  c.clearRect(0, 0, innerWidth, innerHeight)
-
-  circleArray[i].update();
+  c.clearRect(0, 0, innerWidth, innerHeight);
+  
+  for (var i = 0; i < circleArray.length; i++){
+    circleArray[i].update();
+  }
 }
 
 animate();
