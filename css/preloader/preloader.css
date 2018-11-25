@@ -16,14 +16,20 @@
 }
 
 .preloader .loader {
-  width: 100px;
-  height: 100px;
-  line-height: 90px;
+  opacity: 0.6;
+  width: 200px;
+  height: 200px;
   text-shadow: 2px 2px 2px #444;
   box-shadow: 2px 2px 2px #444;
-  border: 3px solid #ffffff;
+  border: 5px solid #ffffff;
   border-radius: 50%;
   align-content: center;
-  font-size: 30px;
+  font-size: 50px;
   color: #fafafa;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

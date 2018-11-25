@@ -1,6 +1,31 @@
+body {
+  font-family: 'Conv_Lato-Regular';
+}
+
 .logo {
   margin-top: 20px;
   width: 200px;
+}
+
+.masthead-brand {
+  font-family: 'Conv_timeburnerbold';
+  font-size: 35px;
+  transition: 0.3s;
+  text-decoration: underline;
+
+}
+
+.masthead-brand:hover {
+  cursor: default;
+  text-decoration-color: #1788dd;
+}
+
+.nav-masthead {
+  font-size: 18px;
+}
+
+.main-header-title {
+  padding-bottom: 10px;
 }
 
 body {
@@ -11,6 +36,7 @@ body {
 .header-svg {
   width: 100px;
   margin-top: 10px;
+  padding-bottom: 20px;
 }
 
 #canvas-preloader {
