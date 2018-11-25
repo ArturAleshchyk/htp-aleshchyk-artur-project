@@ -33,7 +33,9 @@ function createNewElement(task) {
   return listItem
 }
 
-function addTask() {
+function addTask(e) {
+  e.preventDefault();
+
   if (inputTask.value) {
     const listItem = createNewElement(inputTask.value);
     unfinishedTasks.appendChild(listItem);
