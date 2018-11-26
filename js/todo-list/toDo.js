@@ -13,7 +13,7 @@ function createNewElement(task) {
 
   var inputGroupPrep = document.createElement('div');
   inputGroupPrep.className = 'input-group-prepend';
-  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">Done</button>';
+  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10060;</button>';
 
   var label = document.createElement('label');
   label.className = 'form-control';
@@ -89,11 +89,25 @@ function editTask() {
 }
 
 function finishTask() {
-  console.log('f');
+  var formGroup = this.parentNode;
+  var inputGroup = formGroup.parentNode;
+  var listItem = inputGroup.parentNode;
+  var checkbox = listItem.querySelector('.checkbox');
+  checkbox.innerHTML = '&#10004;';
+
+  finishedTasks.appendChild(listItem);
+  bindTaskEvents(listItem, unfinishTask);
 }
 
 function unfinishTask() {
+  var formGroup = this.parentNode;
+  var inputGroup = formGroup.parentNode;
+  var listItem = inputGroup.parentNode;
+  var checkbox = listItem.querySelector('.checkbox');
+  checkbox.innerHTML = '&#10060;';
 
+  unfinishedTasks.appendChild(listItem);
+  bindTaskEvents(listItem, finishTask);
 }
 
 function bindTaskEvents(listItem, checkboxEvents) {
