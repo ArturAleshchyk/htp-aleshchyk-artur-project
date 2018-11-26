@@ -29,16 +29,24 @@
       </header>
       <main role="main" class="inner cover">
         <img class="header-svg" src="img/svg/checklist.svg" alt="Bookmark">
-        <div class="todo-header">
-          <h4 class="main-header-title">ToDo list</h4>
-          <div class="input-group input-group-sm mb-3">
-            <input id="toDoEl" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-            <div class="input-group-prepend">
-              <button class="btn-primary" onclick="newElement()">Add task</button>
-            </div>
+        <h4>Save all your task's in one place.</h4>
+        <form id="myForm">
+          <div class="form-group">
+          <!--input-->
+            <label class="float-left clearfix text-white-50">Create task</label>
+            <input type="text" class="form-control" id="new-task" placeholder="Some text...">
           </div>
-          <ul id="list"></ul>
-        </div>
+          <!--submit-->
+          <!--list-->
+          <button id="add-task" class="btn btn-primary mb-3 w-25">Add</button>
+            <label class="text-white-50">Unfinished task's</label>
+          <ul id="unfinished-tasks" class="pl-0">
+          <!--Finished tasks-->
+          </ul>
+          <ul id="finished-tasks" class="pl-0">
+            <label class="text-white-50">Finished task's</label>
+          </ul>
+        </form>
       </main>
       <footer class="mastfoot mt-auto">
         <div class="inner">
