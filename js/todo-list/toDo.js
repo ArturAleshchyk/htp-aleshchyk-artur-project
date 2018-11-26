@@ -42,11 +42,13 @@ function createNewElement(task) {
 function addTask(e) {
   e.preventDefault();
 
-  if (inputTask.value) {
+  if (inputTask.value.trim()) {
     var listItem = createNewElement(inputTask.value);
     unfinishedTasks.appendChild(listItem);
     bindTaskEvents(listItem, finishTask);
     inputTask.value = '';
+  } else if (!inputTask.value) {
+    alert('Print any task.');
   }
 }
 
