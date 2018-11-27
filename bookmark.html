@@ -1,66 +1,23 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>StudyHelper</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/preloader/preloader.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link href="css/bootstrap/cover.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/customWebStyles/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
-  </head>
-  <body class="text-center" onload="fetchBookmarks()">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">StudyHelper</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="pomodoro.html">Pomodoro timer</a>
-            <a class="nav-link" href="toDoList.html">ToDo list</a>
-            <a class="nav-link  active" href="#">Bookmark's</a>
-          </nav>
-        </div>
-      </header>
-      <main role="main" class="inner cover">
-        <img class="header-svg" src="img/svg/bookmark.svg" alt="Bookmark">
-        <!--Bookmarks-->
-        <h4>Bookmark Your favorite website's</h4>
-        <form id="myForm">
-          <!--Website name-->
-          <div class="form-group">
-            <label class="float-left clearfix text-white-50">Website name</label>
-            <input type="text" class="form-control" id="siteName" placeholder="Name ...">
-          </div>
-          <!--Website Url-->
-          <div class="form-group mt-2">
-            <label class="float-left clearfix text-white-50">Website URL</label>
-            <input type="text" class="form-control" id="siteUrl" placeholder="URL ...">
-          </div>
-          <button type="submit" class="btn btn-primary mb-3">Create bookmark</button>
-        </form>
-        <!--Bookmarks list-->
-        <div class="row">
-          <div class="col-lg-12">
-            <div id="bookmarksResults"></div>
-          </div>
-        </div>
-        <!--Bookmarks end-->
-      </main>
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Created by Aleshchyk Artur - GitHub https://github.com/ArturAleshchyk.`</p>
-        </div>
-      </footer>
-    </div>
-    <script src="js/jquery/jquery-3.3.1.min.js"></script>
-    <script src="js/bootstrap/popper.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/audio-effects/clickEffects.js"></script>
-    <script src="js/bookmarks/bookmarks.js"></script>
-  </body>
-</html>
+<img class="header-svg" src="img/svg/bookmark.svg" alt="Bookmark">
+<!--Bookmarks-->
+<h4>Bookmark Your favorite website's</h4>
+<form id="myForm">
+  <!--Website name-->
+  <div class="form-group">
+    <label class="float-left clearfix text-white-50">Website name</label>
+    <input type="text" class="form-control" id="siteName" placeholder="Name ...">
+  </div>
+  <!--Website Url-->
+  <div class="form-group mt-2">
+    <label class="float-left clearfix text-white-50">Website URL</label>
+    <input type="text" class="form-control" id="siteUrl" placeholder="URL ...">
+  </div>
+  <button type="submit" class="btn btn-primary mb-3">Create bookmark</button>
+</form>
+<!--Bookmarks list-->
+<div class="row">
+  <div class="col-lg-12">
+    <div id="bookmarksResults"></div>
+  </div>
+</div>
+<script src="js/bookmarks/bookmarks.js"></script>

@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link href="css/bootstrap/cover.css" rel="stylesheet">
     <link rel="stylesheet" href="css/customWebStyles/style.css">
-    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/toDolist/toDoStyle.css">
     <link rel="stylesheet" href="css/pomodoro/pomodoro.css">
+    <link rel="stylesheet" href="css/fonts.css">
   </head>
   <body class="text-center">
   <div id="page-preloader" class="preloader d-flex justify-content-center align-items-center">
@@ -28,12 +29,12 @@
           <nav class="nav nav-masthead justify-content-center">
             <a id="home" class="nav-link" onclick="navigateTo('home')" href="#">Home</a>
             <a id="pomodoro" class="nav-link" onclick="navigateTo('pomodoro')" href="#">Pomodoro timer</a>
-            <a class="nav-link" href="toDoList.html">ToDo list</a>
-            <a class="nav-link" href="bookmark.html">Bookmark's</a>
+            <a id="toDoList" class="nav-link" onclick="navigateTo('toDoList')" href="#">ToDo list</a>
+            <a id="bookmark" class="nav-link" onclick="navigateTo('bookmark')" href="#">Bookmark's</a>
           </nav>
         </div>
       </header>
-      <main id="main" role="main"  class="inner cover d-flex flex-column justify-content-center align-items-center" style="">
+      <main id="main" role="main"  class="inner cover" style="">
 
       </main>
       <footer class="mastfoot mt-auto">
