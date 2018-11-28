@@ -80,8 +80,8 @@ var pomodoro = {
 
     if (!this.started) return false;
 
-    if (this.seconds == 0) {
-      if (this.minutes == 0) {
+    if (this.seconds === 0) {
+      if (this.minutes === 0) {
         this.timerComplete();
         return;
       }
@@ -108,6 +108,6 @@ var pomodoro = {
   }
 };
 
-window.onload = function () {
+$(document).ready(function () {
   pomodoro.init();
-};
+});
