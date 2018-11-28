@@ -2,6 +2,7 @@ document.getElementById('myForm').addEventListener('submit', saveBookmark);
 
 function saveBookmark(eo) {
   //Get form values
+  eo.preventDefault();
   const siteName = document.getElementById('siteName').value;
   const siteUrl = document.getElementById('siteUrl').value;
 
@@ -16,6 +17,7 @@ function saveBookmark(eo) {
 
   if (!siteUrl.match(regex)){
     alert('Please use a valid URL.');
+
     return false;
   }
 

@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
     <link href="css/bootstrap/cover.css" rel="stylesheet">
     <link rel="stylesheet" href="css/customWebStyles/style.css">
+    <link rel="stylesheet" href="css/toDolist/toDoStyle.css">
+    <link rel="stylesheet" href="css/pomodoro/pomodoro.css">
     <link rel="stylesheet" href="css/fonts.css">
   </head>
-  <body class="text-center">
+  <body class="text-center d-flex flex-column justify-content-between">
   <div id="page-preloader" class="preloader d-flex justify-content-center align-items-center">
     <canvas id="canvas-preloader"></canvas>
     <div class="loader">
@@ -25,37 +27,26 @@
         <div class="inner">
           <h3 class="masthead-brand">StudyHelper</h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="#">Home</a>
-            <a class="nav-link" href="pomodoro.html">Pomodoro timer</a>
-            <a class="nav-link" href="toDoList.html">ToDo list</a>
-            <a class="nav-link" href="bookmark.html">Bookmark's</a>
+            <a id="home" class="nav-link" onclick="navigateTo('home')" href="#">Home</a>
+            <a id="pomodoro" class="nav-link" onclick="navigateTo('pomodoro')" href="#">Pomodoro timer</a>
+            <a id="toDoList" class="nav-link" onclick="navigateTo('toDoList')" href="#">ToDo list</a>
+            <a id="bookmark" class="nav-link" onclick="navigateTo('bookmark')" href="#">Bookmark's</a>
           </nav>
         </div>
       </header>
-      <main role="main"  class="inner cover d-flex flex-column justify-content-center align-items-center" style="">
-        <img class='logo' src="img/lamp-logo.png" alt="">
-        <h1 class="cover-heading mb-4">Start to use it right now :)</h1>
-        <p class="lead mb-4">This application will help to organize your tasks, web pages and most important, will help to control
-        your time. Have fun :)</p>
-        <div class="btn-group main-btn-group" role="group" aria-label="Basic example">
-          <a href="pomodoro.html" class="btn btn-outline-light p-3">Pomodoro</a>
-          <a href="toDoList.html" class="btn btn-outline-light p-3">ToDO list</a>
-          <a href="bookmark.html" class="btn btn-outline-light p-3">Bookmarker</a>
-        </div>
-        </p>
+      <main id="main" role="main"  class="inner cover mt-4" style="">
       </main>
-      <footer class="mastfoot mt-auto">
+      <footer class="mastfoot mt-4">
         <div class="inner">
           <p id="author-info"></p>
         </div>
       </footer>
     </div>
-    <script src="js/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/bootstrap/popper.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/preloader/preloaderCanvas.js"></script>
-    <script src="js/preloader/preloader.js"></script>
-    <script src="js/audio-effects/clickEffects.js"></script>
-    <script src="js/typing-animation/author-text-typing.js"></script>
+    <script src="js/jquery/jquery-3.3.1.min.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/bootstrap/popper.min.js"></script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+  <script src="js/preloader/preloaderCanvas.js"></script>
+  <script src="js/audio-effects/clickEffects.js"></script>
   </body>
 </html>

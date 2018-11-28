@@ -1,62 +1,19 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>StudyHelper</title>
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/preloader/preloader.css">
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <link href="css/bootstrap/cover.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/customWebStyles/style.css">
-    <link rel="stylesheet" href="css/toDolist/toDoStyle.css">
-    <link rel="stylesheet" href="css/fonts.css">
-  </head>
-  <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">StudyHelper</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="pomodoro.html">Pomodoro timer</a>
-            <a class="nav-link active" href="toDoList.html">ToDo list</a>
-            <a class="nav-link" href="bookmark.html">Bookmark's</a>
-          </nav>
-        </div>
-      </header>
-      <main role="main" class="inner cover">
-        <img class="header-svg" src="img/svg/checklist.svg" alt="Bookmark">
-        <h4>Save all your task's in one place.</h4>
-        <form id="myForm">
-          <div class="form-group">
-          <!--input-->
-            <label class="float-left clearfix text-white-50">Create task</label>
-            <input type="text" class="form-control" id="new-task" placeholder="Some text...">
-          </div>
-          <!--submit-->
-          <!--list-->
-          <button id="add-task" class="btn btn-primary mb-3 w-25">Add</button>
-          <ul id="unfinished-tasks" class="pl-0">
-            <label class="text-white-50">Unfinished task's</label>
-          </ul>
-          <ul id="finished-tasks" class="pl-0">
-            <label class="text-white-50">Finished task's</label>
-          </ul>
-        </form>
-      </main>
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Created by Aleshchyk Artur - GitHub https://github.com/ArturAleshchyk.`</p>
-        </div>
-      </footer>
-    </div>
-    <script src="js/jquery/jquery-3.3.1.slim.min.js"></script>
-    <script src="js/bootstrap/popper.min.js"></script>
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <script src="js/audio-effects/clickEffects.js"></script>
-    <script src="js/todo-list/toDo.js"></script>
-  </body>
-</html>
+<img class="header-svg" src="img/svg/checklist.svg" alt="Bookmark">
+<h4>Save all your task's in one place.</h4>
+<form id="myForm">
+  <div class="form-group">
+    <!--input-->
+    <label class="float-left clearfix text-white-50">Create task</label>
+    <input type="text" class="form-control" id="new-task" placeholder="Some text...">
+  </div>
+  <!--submit-->
+  <!--list-->
+  <button id="add-task" class="btn btn-primary mb-3 w-25">Add</button>
+  <ul id="unfinished-tasks" class="pl-0">
+    <label class="text-white-50">Unfinished task's</label>
+  </ul>
+  <ul id="finished-tasks" class="pl-0">
+    <label class="text-white-50">Finished task's</label>
+  </ul>
+</form>
+<script src="js/todo-list/toDo.js"></script>
