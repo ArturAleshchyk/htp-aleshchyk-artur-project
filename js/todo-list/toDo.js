@@ -1,3 +1,5 @@
+'use strict';
+
 var addButton = document.getElementById('add-task');
 var inputTask = document.getElementById('new-task');
 
@@ -52,7 +54,6 @@ function addTask(e) {
   }
   save();
 }
-
 addButton.onclick = addTask;
 
 function deleteTask() {
@@ -152,4 +153,18 @@ function save() {
 
 function load() {
   return JSON.parse(localStorage.getItem('todo'));
+}
+
+var data = load();
+
+for (var i = 0; i < data.unfinishedTasks.length; i++) {
+  var listItem = createNewElement(data.unfinishedTasks[i]);
+  unfinishedTasks.appendChild(listItem);
+  bindTaskEvents(listItem, finishTask);
+}
+
+for (var i = 0; i < data.finishedTasks.length; i++) {
+  var listItem = createNewElement(data.finishedTasks[i]);
+  finishedTasks.appendChild(listItem);
+  bindTaskEvents(listItem, unfinishTask);
 }
