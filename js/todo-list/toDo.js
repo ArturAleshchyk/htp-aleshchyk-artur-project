@@ -56,11 +56,14 @@ function addTask(e) {
     bindTaskEvents(listItem, finishTask);
     inputTask.value = '';
   } else if (!inputTask.value) {
-    // alert('Print any task.');
-    $('#myModal').modal();
+    $('#myModal').on('show.bs.modal', function (e) {
+      $('#modalTitle').text('Input ERROR');
+      $('#modalBodyText').text('Please fill task form.');
+    }).modal();
   }
   save();
 }
+
 addButton.onclick = addTask;
 
 function deleteTask() {
@@ -155,7 +158,8 @@ function save() {
 
   localStorage.setItem('todo', JSON.stringify({
     unfinishedTasks: unfinishedTasksArr,
-    finishedTasks: finishedTasksArr}));
+    finishedTasks: finishedTasksArr
+  }));
 }
 
 function load() {

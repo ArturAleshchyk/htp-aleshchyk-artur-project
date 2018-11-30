@@ -7,8 +7,10 @@ function saveBookmark(eo) {
   const siteUrl = document.getElementById('siteUrl').value;
 
   if (!siteName || !siteUrl) {
-    // alert('Fill the form');
-    $('#myModal').modal();
+    $('#myModal').on('show.bs.modal', function (e) {
+      $('#modalTitle').text('Input ERROR');
+      $('#modalBodyText').text('Please fill all forms.');
+    }).modal();
     return false;
   }
 
@@ -16,9 +18,11 @@ function saveBookmark(eo) {
   let expression = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi;
   let regex = new RegExp(expression);
 
-  if (!siteUrl.match(regex)){
-    // alert('Please use a valid URL.');
-    $('#myModal').modal();
+  if (!siteUrl.match(regex)) {
+    $('#myModal').on('show.bs.modal', function (e) {
+      $('#modalTitle').text('URL ERROR');
+      $('#modalBodyText').text('You must add valid URL.');
+    }).modal();
     return false;
   }
 
