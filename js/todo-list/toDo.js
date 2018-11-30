@@ -1,10 +1,12 @@
+'use strict';
+
 var addButton = document.getElementById('add-task');
 var inputTask = document.getElementById('new-task');
 
 var unfinishedTasks = document.getElementById('unfinished-tasks');
 var finishedTasks = document.getElementById('finished-tasks');
 
-function createNewElement(task) {
+function createNewElement(task, finished) {
   var listItem = document.createElement('li');
   listItem.className = 'mb-2';
 
@@ -12,8 +14,14 @@ function createNewElement(task) {
   inputGroup.className = 'input-group';
 
   var inputGroupPrep = document.createElement('div');
-  inputGroupPrep.className = 'input-group-prepend';
-  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10060;</button>';
+
+  if (finished) {
+    inputGroupPrep.className = 'input-group-prepend';
+    inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10004;</button>';
+  } else {
+    inputGroupPrep.className = 'input-group-prepend';
+    inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10060;</button>';
+  }
 
   var label = document.createElement('label');
   label.className = 'form-control';
@@ -27,7 +35,7 @@ function createNewElement(task) {
   var inputGroupAppend = document.createElement('div');
   inputGroupAppend.className = 'input-group-append';
   inputGroupAppend.innerHTML = '<button class="btn btn-info edit" type="button">Edit</button>\n' +
-                               '<button class="btn btn-danger delete" type="button">Delete</button>';
+    '<button class="btn btn-danger delete" type="button">Delete</button>';
 
   inputGroup.appendChild(inputGroupPrep);
   inputGroup.appendChild(label);
@@ -50,8 +58,8 @@ function addTask(e) {
   } else if (!inputTask.value) {
     alert('Print any task.');
   }
+  save();
 }
-
 addButton.onclick = addTask;
 
 function deleteTask() {
@@ -61,6 +69,7 @@ function deleteTask() {
   var ul = listItem.parentNode;
 
   ul.removeChild(listItem);
+  save();
 }
 
 function editTask() {
@@ -79,6 +88,7 @@ function editTask() {
     label.innerText = input.value;
     editButton.className = 'btn btn-info';
     editButton.innerHTML = 'Edit';
+    save();
   } else {
     input.style.display = 'block';
     label.style.display = 'none';
@@ -99,6 +109,7 @@ function finishTask() {
 
   finishedTasks.appendChild(listItem);
   bindTaskEvents(listItem, unfinishTask);
+  save();
 }
 
 function unfinishTask() {
@@ -110,6 +121,7 @@ function unfinishTask() {
 
   unfinishedTasks.appendChild(listItem);
   bindTaskEvents(listItem, finishTask);
+  save();
 }
 
 function bindTaskEvents(listItem, checkboxEvents) {
@@ -120,4 +132,45 @@ function bindTaskEvents(listItem, checkboxEvents) {
   checkbox.onclick = checkboxEvents;
   editButton.onclick = editTask;
   deleteButton.onclick = deleteTask;
+}
+
+function save() {
+  var unfinishedTasksArr = [];
+  var finishedTasksArr = [];
+
+  for (var i = 0; i < unfinishedTasks.children.length; i++) {
+    var li = unfinishedTasks.children[i];
+    var label = li.querySelector('label');
+    unfinishedTasksArr.push(label.innerText);
+  }
+
+  for (var i = 0; i < finishedTasks.children.length; i++) {
+    var li = finishedTasks.children[i];
+    var label = li.querySelector('label');
+    finishedTasksArr.push(label.innerText);
+  }
+
+  // localStorage.removeItem();
+
+  localStorage.setItem('todo', JSON.stringify({
+    unfinishedTasks: unfinishedTasksArr,
+    finishedTasks: finishedTasksArr}));
+}
+
+function load() {
+  return JSON.parse(localStorage.getItem('todo'));
+}
+
+var data = load();
+
+for (var i = 0; i < data.unfinishedTasks.length; i++) {
+  var listItem = createNewElement(data.unfinishedTasks[i], false);
+  unfinishedTasks.appendChild(listItem);
+  bindTaskEvents(listItem, finishTask);
+}
+
+for (var i = 0; i < data.finishedTasks.length; i++) {
+  var listItem = createNewElement(data.finishedTasks[i], true);
+  finishedTasks.appendChild(listItem);
+  bindTaskEvents(listItem, unfinishTask);
 }
