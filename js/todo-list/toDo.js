@@ -27,7 +27,7 @@ function createNewElement(task) {
   var inputGroupAppend = document.createElement('div');
   inputGroupAppend.className = 'input-group-append';
   inputGroupAppend.innerHTML = '<button class="btn btn-info edit" type="button">Edit</button>\n' +
-                               '<button class="btn btn-danger delete" type="button">Delete</button>';
+    '<button class="btn btn-danger delete" type="button">Delete</button>';
 
   inputGroup.appendChild(inputGroupPrep);
   inputGroup.appendChild(label);
@@ -50,6 +50,7 @@ function addTask(e) {
   } else if (!inputTask.value) {
     alert('Print any task.');
   }
+  save();
 }
 
 addButton.onclick = addTask;
@@ -61,6 +62,7 @@ function deleteTask() {
   var ul = listItem.parentNode;
 
   ul.removeChild(listItem);
+  save();
 }
 
 function editTask() {
@@ -79,6 +81,7 @@ function editTask() {
     label.innerText = input.value;
     editButton.className = 'btn btn-info';
     editButton.innerHTML = 'Edit';
+    save();
   } else {
     input.style.display = 'block';
     label.style.display = 'none';
@@ -99,6 +102,7 @@ function finishTask() {
 
   finishedTasks.appendChild(listItem);
   bindTaskEvents(listItem, unfinishTask);
+  save();
 }
 
 function unfinishTask() {
@@ -110,6 +114,7 @@ function unfinishTask() {
 
   unfinishedTasks.appendChild(listItem);
   bindTaskEvents(listItem, finishTask);
+  save();
 }
 
 function bindTaskEvents(listItem, checkboxEvents) {
@@ -120,4 +125,31 @@ function bindTaskEvents(listItem, checkboxEvents) {
   checkbox.onclick = checkboxEvents;
   editButton.onclick = editTask;
   deleteButton.onclick = deleteTask;
+}
+
+function save() {
+  var unfinishedTasksArr = [];
+  var finishedTasksArr = [];
+
+  for (var i = 0; i < unfinishedTasks.children.length; i++) {
+    var li = unfinishedTasks.children[i];
+    var label = li.querySelector('label');
+    unfinishedTasksArr.push(label.innerText);
+  }
+
+  for (var i = 0; i < finishedTasks.children.length; i++) {
+    var li = finishedTasks.children[i];
+    var label = li.querySelector('label');
+    finishedTasksArr.push(label.innerText);
+  }
+
+  // localStorage.removeItem();
+
+  localStorage.setItem('todo', JSON.stringify({
+    unfinishedTasks: unfinishedTasksArr,
+    finishedTasks: finishedTasksArr}));
+}
+
+function load() {
+  return JSON.parse(localStorage.getItem('todo'));
 }
