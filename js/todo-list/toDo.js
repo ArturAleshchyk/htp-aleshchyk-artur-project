@@ -6,7 +6,7 @@ var inputTask = document.getElementById('new-task');
 var unfinishedTasks = document.getElementById('unfinished-tasks');
 var finishedTasks = document.getElementById('finished-tasks');
 
-function createNewElement(task) {
+function createNewElement(task, finished) {
   var listItem = document.createElement('li');
   listItem.className = 'mb-2';
 
@@ -14,8 +14,14 @@ function createNewElement(task) {
   inputGroup.className = 'input-group';
 
   var inputGroupPrep = document.createElement('div');
-  inputGroupPrep.className = 'input-group-prepend';
-  inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10060;</button>';
+
+  if (finished) {
+    inputGroupPrep.className = 'input-group-prepend';
+    inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10004;</button>';
+  } else {
+    inputGroupPrep.className = 'input-group-prepend';
+    inputGroupPrep.innerHTML = '<button class="btn btn-toolbar checkbox" type="button">&#10060;</button>';
+  }
 
   var label = document.createElement('label');
   label.className = 'form-control';
@@ -158,13 +164,13 @@ function load() {
 var data = load();
 
 for (var i = 0; i < data.unfinishedTasks.length; i++) {
-  var listItem = createNewElement(data.unfinishedTasks[i]);
+  var listItem = createNewElement(data.unfinishedTasks[i], false);
   unfinishedTasks.appendChild(listItem);
   bindTaskEvents(listItem, finishTask);
 }
 
 for (var i = 0; i < data.finishedTasks.length; i++) {
-  var listItem = createNewElement(data.finishedTasks[i]);
+  var listItem = createNewElement(data.finishedTasks[i], true);
   finishedTasks.appendChild(listItem);
   bindTaskEvents(listItem, unfinishTask);
 }
