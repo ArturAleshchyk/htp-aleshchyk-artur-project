@@ -1,4 +1,5 @@
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
+fetchBookmarks();
 
 function saveBookmark(eo) {
   //Get form values
@@ -7,10 +8,7 @@ function saveBookmark(eo) {
   const siteUrl = document.getElementById('siteUrl').value;
 
   if (!siteName || !siteUrl) {
-    $('#myModal').on('show.bs.modal', function (e) {
-      $('#modalTitle').text('Input ERROR');
-      $('#modalBodyText').text('Please fill all forms.');
-    }).modal();
+    modalErrHandler('Input ERROR', 'Please fill all forms');
     return false;
   }
 
@@ -19,10 +17,7 @@ function saveBookmark(eo) {
   let regex = new RegExp(expression);
 
   if (!siteUrl.match(regex)) {
-    $('#myModal').on('show.bs.modal', function (e) {
-      $('#modalTitle').text('URL ERROR');
-      $('#modalBodyText').text('You must add valid URL.');
-    }).modal();
+    modalErrHandler('URL ERROR', 'You must add valid URL');
     return false;
   }
 
