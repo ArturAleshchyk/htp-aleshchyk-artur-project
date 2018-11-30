@@ -18,7 +18,9 @@ function removeActive() {
 }
 
 function loadLayout() {
-  navigateTo('home');
+  debugger;
+  var URLHash = JSON.parse(decodeURIComponent(window.location.hash.substr(1)));
+  navigateTo(URLHash.pagename || 'home');
 }
 
 window.onhashchange = SwitchToStateFromURLHash;

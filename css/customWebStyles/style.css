@@ -58,3 +58,7 @@ footer {
     position: absolute;
     bottom: 0;
 }
+
+.nav .nav-link:hover {
+    cursor: pointer;
+}

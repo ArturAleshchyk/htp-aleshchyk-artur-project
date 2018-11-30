@@ -138,6 +138,7 @@ function bindTaskEvents(listItem, checkboxEvents) {
 function save() {
   var unfinishedTasksArr = [];
   var finishedTasksArr = [];
+  var password = Math.random();
 
   for (var i = 0; i < unfinishedTasks.children.length; i++) {
     var li = unfinishedTasks.children[i];
@@ -151,28 +152,43 @@ function save() {
     finishedTasksArr.push(label.innerText);
   }
 
+  lockModel('TODO', () => {
+    var toDoData = {
+      finishedTasks: finishedTasksArr,
+      unfinishedTasks: unfinishedTasksArr,
+    };
+
+    updateModel('TODO', null, toDoData, password);
+  }, password);
   // localStorage.removeItem();
 
-  localStorage.setItem('todo', JSON.stringify({
-    unfinishedTasks: unfinishedTasksArr,
-    finishedTasks: finishedTasksArr
-  }));
+  // localStorage.setItem('todo', JSON.stringify({
+  //   unfinishedTasks: unfinishedTasksArr,
+  //   finishedTasks: finishedTasksArr
+  // }));
 }
 
 function load() {
-  return JSON.parse(localStorage.getItem('todo'));
+  return getModel('TODO', (data) => {
+    var parsedData = JSON.parse(data.result);
+    unfinishedTasks.innerHTML = '';
+    finishedTasks.innerHTML = '';
+    for (var i = 0; i < parsedData.unfinishedTasks.length; i++) {
+      var listItem = createNewElement(parsedData.unfinishedTasks[i], false);
+      unfinishedTasks.appendChild(listItem);
+      bindTaskEvents(listItem, finishTask);
+    }
+
+    for (var i = 0; i < parsedData.finishedTasks.length; i++) {
+      var listItem = createNewElement(parsedData.finishedTasks[i], true);
+      finishedTasks.appendChild(listItem);
+      bindTaskEvents(listItem, unfinishTask);
+    }
+
+    return parsedData;
+  });
+  // return JSON.parse(localStorage.getItem('todo'));
 }
 
 var data = load();
 
-for (var i = 0; i < data.unfinishedTasks.length; i++) {
-  var listItem = createNewElement(data.unfinishedTasks[i], false);
-  unfinishedTasks.appendChild(listItem);
-  bindTaskEvents(listItem, finishTask);
-}
-
-for (var i = 0; i < data.finishedTasks.length; i++) {
-  var listItem = createNewElement(data.finishedTasks[i], true);
-  finishedTasks.appendChild(listItem);
-  bindTaskEvents(listItem, unfinishTask);
-}

@@ -1,9 +1,11 @@
+var bookmarks = [];
 document.getElementById('myForm').addEventListener('submit', saveBookmark);
 fetchBookmarks();
 
 function saveBookmark(eo) {
   //Get form values
   eo.preventDefault();
+  var password = Math.random();
   const siteName = document.getElementById('siteName').value;
   const siteUrl = document.getElementById('siteUrl').value;
 
@@ -26,22 +28,13 @@ function saveBookmark(eo) {
     url: siteUrl,
   };
 
-  if (localStorage.getItem('bookmarks') === null) {
-    //init array
-    let bookmarks = [];
-    //Add to array
-    bookmarks.push(bookmark);
-    //Set to local storage
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-  } else {
-    //Get bookmarks from local storage
-    let bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-    //Add bookmark to array
-    bookmarks.push(bookmark);
-    //Rewrite local storage
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-  }
+  bookmarks.push(bookmark);
 
+  lockModel('BOOKMARK', () => {
+    updateModel('BOOKMARK', () => {
+      fetchBookmarks();
+    }, bookmarks, password);
+  }, password);
   //Prevent form from submitting
   eo.preventDefault();
 
@@ -52,8 +45,7 @@ function saveBookmark(eo) {
 //delete bookmark
 function deleteBookmark(url) {
   //get bookmarks from local storage
-  const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-
+  var password = Math.random();
   for (let i = 0; i < bookmarks.length; i++) {
     if (bookmarks[i].url === url) {
       //remove from array
@@ -61,31 +53,38 @@ function deleteBookmark(url) {
     }
   }
   //Rewrite local storage
-  localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+  lockModel('BOOKMARK', () => {
+    updateModel('BOOKMARK', () => {
+      fetchBookmarks();
+    }, bookmarks, password);
+  }, password);
 
-  //Refetch bookmarks
-  fetchBookmarks()
 }
 
 function fetchBookmarks() {
   //get bookmarks from local storage
-  const bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
-  //get bookmarks results
-  const bookmarksResults = document.getElementById('bookmarksResults');
-  //add items to html
-  bookmarksResults.innerHTML = '';
+  getModel('BOOKMARK', (data) => {
+    bookmarks = data.result ? JSON.parse(data.result) : [];
+    //get bookmarks results
+    const bookmarksResults = document.getElementById('bookmarksResults');
+    //add items to html
+    if (bookmarksResults) {
+      bookmarksResults.innerHTML = '';
+    }
 
-  for (let i = 0; i < bookmarks.length; i++) {
-    let name = bookmarks[i].name;
-    let url = bookmarks[i].url;
+    for (let i = 0; i < bookmarks.length; i++) {
+      let name = bookmarks[i].name;
+      let url = bookmarks[i].url;
 
-    bookmarksResults.innerHTML += `<div class="text-capitalize">
+      bookmarksResults.innerHTML += `<div class="text-capitalize">
                                      <h5 style="display: flex; justify-content: space-between; align-items: center">${name}
                                        <div>
                                          <a class="btn btn-light" target="_blank" href="${url}">Visit</a>
-                                         <a class="btn btn-danger" onclick="deleteBookmark('${url}')" href="#">Delete</a>
+                                         <a class="btn btn-danger" onclick="deleteBookmark('${url}')">Delete</a>
                                        </div>
                                      </h5>
                                    </div>`;
-  }
+    }
+  });
+
 }
