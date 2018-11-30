@@ -56,10 +56,7 @@ function addTask(e) {
     bindTaskEvents(listItem, finishTask);
     inputTask.value = '';
   } else if (!inputTask.value) {
-    $('#myModal').on('show.bs.modal', function (e) {
-      $('#modalTitle').text('Input ERROR');
-      $('#modalBodyText').text('Please fill task form.');
-    }).modal();
+    modalErrHandler('Input ERROR', 'Please fill task form');
   }
   save();
 }
