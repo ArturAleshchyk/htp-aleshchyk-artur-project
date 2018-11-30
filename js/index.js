@@ -17,6 +17,32 @@ function removeActive() {
   });
 }
 
+function loadLayout() {
+  navigateTo('home');
+}
+
+window.onhashchange = SwitchToStateFromURLHash;
+
+var SPAStateH = {};
+
+function SwitchToStateFromURLHash(hash) {
+  var URLHash = window.location.hash || hash;
+
+  var StateJSON = decodeURIComponent(URLHash.substr(1));
+
+  if (StateJSON !== "")
+
+    SPAStateH = JSON.parse(StateJSON);
+
+  else
+    SPAStateH = {pagename: 'home'};
+
+  console.log('Новое состояние приложения:');
+  console.log(SPAStateH);
+
+  navigateTo(SPAStateH.pagename);
+}
+
 function navigateTo(url) {
   if (event) {
     event.preventDefault();
@@ -33,12 +59,18 @@ function navigateTo(url) {
     },
 
     error: function (e) {
-      alert('asdasdasdasd');
+      modalErrHandler('Server error', 'Error 404');
     }
   })
 }
 
-
-function loadLayout() {
-  navigateTo('home');
+function switchToPage(pageName) {
+  switchToState({pagename: pageName});
 }
+
+function switchToState(NewStateH) {
+  window.location.hash = encodeURIComponent(JSON.stringify(NewStateH));
+  SwitchToStateFromURLHash('#' + encodeURIComponent(JSON.stringify(NewStateH)));
+}
+
+SwitchToStateFromURLHash();
