@@ -7,7 +7,8 @@ function saveBookmark(eo) {
   const siteUrl = document.getElementById('siteUrl').value;
 
   if (!siteName || !siteUrl) {
-    alert('Fill the form');
+    // alert('Fill the form');
+    $('#myModal').modal();
     return false;
   }
 
@@ -16,8 +17,8 @@ function saveBookmark(eo) {
   let regex = new RegExp(expression);
 
   if (!siteUrl.match(regex)){
-    alert('Please use a valid URL.');
-
+    // alert('Please use a valid URL.');
+    $('#myModal').modal();
     return false;
   }
 

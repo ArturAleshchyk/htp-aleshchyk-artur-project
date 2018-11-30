@@ -56,7 +56,8 @@ function addTask(e) {
     bindTaskEvents(listItem, finishTask);
     inputTask.value = '';
   } else if (!inputTask.value) {
-    alert('Print any task.');
+    // alert('Print any task.');
+    $('#myModal').modal();
   }
   save();
 }
