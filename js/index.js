@@ -19,7 +19,7 @@ function removeActive() {
 
 function loadLayout() {
   debugger;
-  var URLHash = JSON.parse(decodeURIComponent(window.location.hash.substr(1)));
+  var URLHash = window.location.hash ? JSON.parse(decodeURIComponent(window.location.hash.substr(1))) : '';
   navigateTo(URLHash.pagename || 'home');
 }
 
@@ -28,7 +28,7 @@ window.onhashchange = SwitchToStateFromURLHash;
 var SPAStateH = {};
 
 function SwitchToStateFromURLHash(hash) {
-  var URLHash = window.location.hash || hash;
+  var URLHash = window.location.hash || hash || '';
 
   var StateJSON = decodeURIComponent(URLHash.substr(1));
 
