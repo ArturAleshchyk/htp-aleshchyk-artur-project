@@ -49,7 +49,6 @@ function navigateTo(url) {
   if (event) {
     event.preventDefault();
   }
-  // $('#page-preloader').removeClass('done'); //bug
   $.ajax(url + '.html', {
     type: 'POST',
     xhrFields: {onprogress: Progress},
@@ -57,7 +56,6 @@ function navigateTo(url) {
       $('#main').html(data);
       removeActive();
       $('#' + url).addClass('active');
-      // $('#page-preloader').addClass('done');
     },
 
     error: function (e) {
