@@ -1,8 +1,9 @@
 $(document).ready(loadLayout);
+let bookmarks = [];
 
 function Progress(EO) {
   if (EO.lengthComputable) {
-    var Perc = Math.round(EO.loaded / EO.total * 100);
+    let Perc = Math.round(EO.loaded / EO.total * 100);
     $('#load-perc').text(Perc + "%");
     if (Perc === 100) {
       $('#page-preloader').addClass('done');
@@ -19,18 +20,18 @@ function removeActive() {
 
 function loadLayout() {
   debugger;
-  var URLHash = window.location.hash ? JSON.parse(decodeURIComponent(window.location.hash.substr(1))) : '';
+  let URLHash = window.location.hash ? JSON.parse(decodeURIComponent(window.location.hash.substr(1))) : '';
   navigateTo(URLHash.pagename || 'home');
 }
 
 window.onhashchange = SwitchToStateFromURLHash;
 
-var SPAStateH = {};
+let SPAStateH = {};
 
 function SwitchToStateFromURLHash(hash) {
-  var URLHash = window.location.hash || hash || '';
+  let URLHash = window.location.hash || hash || '';
 
-  var StateJSON = decodeURIComponent(URLHash.substr(1));
+  let StateJSON = decodeURIComponent(URLHash.substr(1));
 
   if (StateJSON !== "")
 

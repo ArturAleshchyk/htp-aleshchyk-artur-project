@@ -1,5 +1,5 @@
 function modalErrHandler(errorTitleText, errorBodyText){
-  $('#myModal').on('show.bs.modal', function (e) {
+  $('#myModal').on('show.bs.modal', () => {
     $('#modalTitle').text(errorTitleText);
     $('#modalBodyText').text(errorBodyText);
   }).modal();

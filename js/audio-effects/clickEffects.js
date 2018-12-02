@@ -1,4 +1,3 @@
-//Danger buttons
 $(document).on('click', '.btn-danger', () => {
   let clickRemove = new Audio();
   clickRemove.src = 'audio/clickRemove.mp3';
@@ -10,7 +9,6 @@ $(document).on('click', '.btn-danger', () => {
   clickSoundDanger();
 });
 
-//Primary buttons
 $(document).on('click', '.btn-primary', () => {
   let clickPrimary = new Audio();
   clickPrimary.src = 'audio/clickPrimary.mp3';
@@ -22,7 +20,6 @@ $(document).on('click', '.btn-primary', () => {
   clickSoundPrimary();
 });
 
-//Link buttons
 $(document).on('click', '.btn-light', () => {
   let clickLinks = new Audio();
   clickLinks.src = 'audio/clickLinks.mp3';
@@ -34,7 +31,6 @@ $(document).on('click', '.btn-light', () => {
   clickSoundLinks();
 });
 
-//Link success
 $(document).on('click', '.btn-success', () => {
   let clickRemove = new Audio();
   clickRemove.src = 'audio/clickSuccess.mp3';

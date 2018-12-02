@@ -1,3 +1,5 @@
+'use strict';
+
 var canvas = document.getElementById('canvas-preloader');
 var c = canvas.getContext('2d');
 
@@ -46,7 +48,7 @@ function Circle(x, y, dx, dy, radius) {
   };
 
   //Draw circles function
-  this.draw = function() {
+  this.draw = function () {
     c.beginPath();
     c.arc(this.x, this.y, this.radius, doublePi, false);
     c.fillStyle = this.color;
@@ -64,9 +66,9 @@ for (var i = 0; i < numOfCircles; i++) {
   //Random Y position
   var y = Math.random() * (innerHeight - radius * 2) + radius;
   //Random X speed
-  var dx = (Math.random() - 0.5) *2;
+  var dx = (Math.random() - 0.5) * 2;
   //Random Y speed
-  var dy = (Math.random() - 0.5) *2;
+  var dy = (Math.random() - 0.5) * 2;
   //Create new circle
   circleArray.push(new Circle(x, y, dx, dy, radius));
 }
@@ -75,8 +77,8 @@ for (var i = 0; i < numOfCircles; i++) {
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0, 0, innerWidth, innerHeight);
-  
-  for (var i = 0; i < circleArray.length; i++){
+
+  for (var i = 0; i < circleArray.length; i++) {
     circleArray[i].update();
   }
 }

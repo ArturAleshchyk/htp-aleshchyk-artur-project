@@ -1,32 +1,32 @@
 #timer {
-    border: 8px solid #fff;
-    border-radius: 50%;
-    width: 300px;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
 }
 
 .semi-transpaprent-bg {
-    background: radial-gradient(circle,  rgba(105, 212, 153, 1), rgba(105, 212, 153, 0.3));
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  background: radial-gradient(circle, rgba(105, 212, 153, 1), rgba(105, 212, 153, 0.3));
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 #time {
-    font-family: 'Conv_Digital Display';
-    cursor: default;
-    font-size: 60px;
-    z-index: 1;
-    position: relative;
+  font-family: 'Conv_Digital Display';
+  cursor: default;
+  font-size: 60px;
+  z-index: 1;
+  position: relative;
 }
 
 #filler {
-    background: #e70041;
-    opacity: 0.5;
-    height: 0;
-    width: 300px;
-    position: absolute;
-    bottom: 0;
+  background: #e70041;
+  opacity: 0.5;
+  height: 0;
+  width: 300px;
+  position: absolute;
+  bottom: 0;
 }

@@ -1,3 +1,5 @@
+'use strict';
+
 var pomodoro = {
   started: false,
   minutes: 0,
@@ -95,7 +97,7 @@ var pomodoro = {
     this.update();
   },
 
-  playSound: function() {
+  playSound: function () {
     var clickRemove = new Audio();
     clickRemove.src = 'audio/alert.mp3';
     clickRemove.play();

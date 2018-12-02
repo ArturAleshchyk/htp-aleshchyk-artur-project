@@ -1,3 +1,5 @@
+'use strict';
+
 var AjaxHandlerScript = "http://fe.it-academy.by/AjaxStringStorage2.php";
 
 function getModel(modelName, readReady) {
@@ -14,7 +16,7 @@ function getModel(modelName, readReady) {
 }
 
 function lockModel(modelName, lockGetReady, password) {
-  UpdatePassword = Math.random();
+  var UpdatePassword = Math.random();
 
   $.ajax(
     {
@@ -33,7 +35,7 @@ function lockModel(modelName, lockGetReady, password) {
 
 
 function updateModel(modelName, updateReady, data, password) {
-  UpdatePassword = Math.random();
+  var UpdatePassword = Math.random();
 
   $.ajax(
     {

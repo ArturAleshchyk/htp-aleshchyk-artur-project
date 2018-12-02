@@ -1,64 +1,64 @@
 * {
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently
-                                     supported by Chrome and Opera */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                   supported by Chrome and Opera */
 }
 
 body {
-    font-family: 'Conv_Lato-Regular';
+  font-family: 'Conv_Lato-Regular';
 }
 
 .logo {
-    margin-top: 20px;
-    width: 150px;
+  margin-top: 20px;
+  width: 150px;
 }
 
 .masthead-brand {
-    font-family: 'Conv_timeburnerbold';
-    font-size: 35px;
-    transition: 0.3s;
-    text-decoration: underline;
+  font-family: 'Conv_timeburnerbold';
+  font-size: 35px;
+  transition: 0.3s;
+  text-decoration: underline;
 
 }
 
 .masthead-brand:hover {
-    cursor: default;
-    text-decoration-color: #1788dd;
+  cursor: default;
+  text-decoration-color: #1788dd;
 }
 
 .nav-masthead {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .main-header-title {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 body {
-    background-color: #36414b;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+  background-color: #36414b;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .header-svg {
-    width: 100px;
-    margin-top: 10px;
-    padding-bottom: 20px;
+  width: 100px;
+  margin-top: 10px;
+  padding-bottom: 20px;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 640px;
-    position: absolute;
-    bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 640px;
+  position: absolute;
+  bottom: 0;
 }
 
 .nav .nav-link:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
