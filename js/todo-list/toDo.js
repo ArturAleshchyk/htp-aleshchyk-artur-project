@@ -160,12 +160,6 @@ function save() {
 
     updateModel('TODO', null, toDoData, password);
   }, password);
-  // localStorage.removeItem();
-
-  // localStorage.setItem('todo', JSON.stringify({
-  //   unfinishedTasks: unfinishedTasksArr,
-  //   finishedTasks: finishedTasksArr
-  // }));
 }
 
 function load() {
@@ -187,7 +181,6 @@ function load() {
 
     return parsedData;
   });
-  // return JSON.parse(localStorage.getItem('todo'));
 }
 
 var data = load();
