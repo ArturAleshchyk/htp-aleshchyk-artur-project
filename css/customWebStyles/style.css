@@ -5,8 +5,6 @@
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
-  /* Non-prefixed version, currently
-                                   supported by Chrome and Opera */
 }
 
 body {
@@ -50,12 +48,17 @@ body {
   padding-bottom: 20px;
 }
 
+main {
+  margin-bottom: 50px;
+}
+
 footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 5px;
+  margin-top: 50px;
+  border: 2px dashed #ffffff;
+  height: 50px;
   width: 640px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 
