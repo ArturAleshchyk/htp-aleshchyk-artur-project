@@ -1,0 +1,23 @@
+<img class="header-svg" src="img/svg/bookmark.svg" alt="Bookmark">
+<!--Bookmarks-->
+<h4>Bookmark Your favorite website's</h4>
+<form id="myForm">
+  <!--Website name-->
+  <div class="form-group">
+    <label class="float-left clearfix text-white-50">Website name</label>
+    <input type="text" class="form-control" id="siteName" placeholder="Name ...">
+  </div>
+  <!--Website Url-->
+  <div class="form-group mt-2">
+    <label class="float-left clearfix text-white-50">Website URL</label>
+    <input type="text" class="form-control" id="siteUrl" placeholder="URL ...">
+  </div>
+  <button type="submit" class="btn btn-primary mb-3">Create bookmark</button>
+</form>
+<!--Bookmarks list-->
+<div class="row">
+  <div class="col-lg-12">
+    <div id="bookmarksResults"></div>
+  </div>
+</div>
+<script src="js/bookmarks/bookmarks.js"></script>

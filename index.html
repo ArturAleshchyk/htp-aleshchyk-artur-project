@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>StudyHelper</title>
+    <link rel="stylesheet" href="css/preloader/preloader.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link href="css/bootstrap/cover.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/customWebStyles/style.css">
+    <link rel="stylesheet" href="css/toDolist/toDoStyle.css">
+    <link rel="stylesheet" href="css/pomodoro/pomodoro.css">
+    <link rel="stylesheet" href="css/fonts/fonts.css">
+  </head>
+  <body class="text-center d-flex flex-column justify-content-between">
+  <div id="page-preloader" class="preloader d-flex justify-content-center align-items-center">
+    <canvas id="canvas-preloader"></canvas>
+    <div class="loader">
+      <span id="load-perc">0%</span>
+    </div>
+  </div>
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">StudyHelper</h3>
+        <nav class="nav nav-masthead justify-content-center">
+          <a id="home" class="nav-link" onclick="switchToPage('home')">Home</a>
+          <a id="pomodoro" class="nav-link" onclick="switchToPage('pomodoro')">Pomodoro timer</a>
+          <a id="toDoList" class="nav-link" onclick="switchToPage('toDoList')">ToDo list</a>
+          <a id="bookmark" class="nav-link" onclick="switchToPage('bookmark')">Bookmark's</a>
+        </nav>
+      </div>
+    </header>
+    <article>
+      <div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content text-black-50">
+            <div class="modal-header">
+              <h5 id="modalTitle" class="modal-title h6">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="modalBodyText" class="h5">Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <main id="main" role="main"  class="inner cover mt-5" style="">
+    </main>
+    <footer class="mastfoot mt-4">
+      <div class="inner d-flex justify-content-center align-items-center">
+        <p id="author-info"></p>
+      </div>
+    </footer>
+    </div>
+    <script src="js/jquery/jquery-3.3.1.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/bootstrap/popper.min.js"></script>
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/preloader/preloaderCanvas.js"></script>
+    <script src="js/audio-effects/clickEffects.js"></script>
+    <script src="js/typing-animation/author-text-typing.js"></script>
+    <script src="js/AjaxHendler.js"></script>
+    <script src="js/modal-window/modal-error-handler.js"></script>
+  </body>
+</html>
